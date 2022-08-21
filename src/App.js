@@ -1,6 +1,9 @@
 import './App.css';
 import NavBar from './components/AddStudent/NavBar';
 import AddStudent from './components/AddStudent/AddStudent';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import StudentProfilePage from '../../../SchoolManament_studentprofile/schoolmanage/src/pages/StudentProfilePage';
+import TeacherPage from '../../../SchoolManament_studentprofile/schoolmanage/src/pages/TeacherPage';
 
 
 function App() {
