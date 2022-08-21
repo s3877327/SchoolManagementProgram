@@ -8,6 +8,13 @@ function App() {
     <>
       <NavBar />
       <AddStudent />
+      <Router>
+      <Routes>
+        <Route exact path="/student-profile" element={<StudentProfilePage />} />
+        <Route exact path="/teacher-manage" element={<TeacherPage />} />
+
+      </Routes>
+    </Router>
     </>
   );
 }
