@@ -17,8 +17,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<NavBar/>}>
-          <Route index element={<Homepage/>} />
-          <Route exact path="/student-profile" element={<StudentProfilePage />} />
+          <Route index element={<StudentProfilePage/>} />
           <Route exact path="/add-student" element={<AddStudentPage/>}/>
           <Route exact path="/teacher-page" element={<TeacherPage/>}/>
           <Route exact path="/login" element={<LoginForm/>}/>
