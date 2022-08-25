@@ -26,6 +26,7 @@ function App() {
           <Route exact path="/teacher-page" element={<TeacherPage />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
+          <Route exact path="/student-profile" element={<StudentProfilePage />} />
         </Routes>
       </BrowserRouter>
     </>

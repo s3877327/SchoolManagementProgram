@@ -30,7 +30,7 @@ const LoginForm = ({
       />
     </div>
     <button className="btn btn-primary mb-2">Login</button><br />
-    Forgot your password? <Link to='/'>Click Here</Link>
+    {/* Forgot your password? <Link to='/'>Click Here</Link> */}
   </form>
 )
 
