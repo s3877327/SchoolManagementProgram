@@ -1,10 +1,8 @@
 import  { React, Fragment } from 'react'
-import '../components/AddStudent/styling/NavBar.css';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+function Navbar() {
   return (
-    <>
     <Fragment>
       <div className="nav bg-light d-flex justify-content-between">
         <Link className='nav-link' to='/'>Home</Link>
@@ -12,8 +10,7 @@ const NavBar = () => {
         <Link className='nav-link' to='/register'>Register</Link>
       </div>
     </Fragment>
-    </>
   )
 }
 
-export default NavBar
+export default Navbar

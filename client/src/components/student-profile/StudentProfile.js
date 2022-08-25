@@ -13,12 +13,12 @@ function StudentProfile() {
           <SchoolInfo />
         </div>
       </div>
-      <div class="h4 pb-2 mb-4 text-danger border-top border-dark"></div>
+      <div className="h4 pb-2 mb-4 text-danger border-top border-dark"></div>
       <div className="row justify-content-left">
-        <div class="col">
+        <div className="col">
           <ClassInfo />
         </div>
-        <div class="col">
+        <div className="col">
           <PersonalInfo />
         </div>
       </div>

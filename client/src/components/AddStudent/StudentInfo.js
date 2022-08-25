@@ -33,7 +33,7 @@ const StudentInfo = () => {
         <label for="form-roll-no">Roll No.</label>
         <input type="text" id="form-roll-no" name="form-roll-no"></input>
       </div>
-      <div class="gen_field">
+      <div className="gen_field">
         <label for="gender">Gender</label>
         <select id="gender" name="gender">
             <option value="M" name="M">Male</option>
