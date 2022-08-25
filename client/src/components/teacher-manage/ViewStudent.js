@@ -9,7 +9,7 @@ function ViewStudent() {
         <p clasName="card-text">
           Click to view student details
         </p>
-        <Link to='/'><button className="btn btn-primary">View</button></Link>
+        <Link to='/student-list'><button className="btn btn-primary">View</button></Link>
       </div>
     </div>
   );

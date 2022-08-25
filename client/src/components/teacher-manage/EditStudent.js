@@ -9,7 +9,7 @@ function EditStudent() {
         <p clasName="card-text">
           Click to add new student
         </p>
-        <Link to='/student-profile'><button className="btn btn-primary">Add</button></Link>
+        <Link to='/add-student'><button className="btn btn-primary">Add</button></Link>
       </div>
     </div>
   )

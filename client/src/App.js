@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
+import StudentList from "./pages/StudentList";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/student-profile" element={<StudentProfilePage />} />
+          <Route exact path="/student-list" element={<StudentList />} />
         </Routes>
       </BrowserRouter>
     </>

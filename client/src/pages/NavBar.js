@@ -23,23 +23,38 @@ const Navbar = () => {
     <nav className=" navbar navbar-expand bg-light">
       <div className="container-fluid">
         <ul className="nav navbar-nav me-auto mb-2 mb-lg-0">
-          {auth.user.isTeacher && (
-            <li className="nav-item">
-            <Link className="nav-link active" to="/">
-              Home
-            </Link>
-          </li>
+          <Link className="nav-link active" to="/">
+            Home
+          </Link>
+          {auth !== null && (
+            <ul className="nav">
+              {!auth.user.isTeacher && (
+                <li className="nav-item">
+                <Link className="nav-link active" to="/student-profile">
+                  Student Profile
+                </Link>
+              </li>
+              )}
+            </ul>
           )}
-          
 
           {auth !== null && (
-            
             <ul className="nav">
               {auth.user.isTeacher && (
-                
                 <li className="nav-item">
                   <Link className="nav-link active" to="/myaccount">
                     My Account
+                  </Link>
+                </li>
+              )}
+            </ul>
+          )}
+          {auth !== null && (
+            <ul className="nav">
+              {auth.user.isTeacher && (
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/teacher-page">
+                    Dashboard
                   </Link>
                 </li>
               )}
@@ -71,7 +86,6 @@ const Navbar = () => {
             </li>
           </ul>
         )}
-      
       </div>
     </nav>
   );
