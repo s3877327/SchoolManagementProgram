@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 function StudentList() {
   return (
-    <div>StudentList</div>
+    <Fragment>
+      <div className='container-fluid bg-secondary h-1 p-5 text-center'>StudentList</div>
+    </Fragment>
   )
 }
 

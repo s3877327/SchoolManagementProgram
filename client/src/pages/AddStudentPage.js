@@ -1,9 +1,9 @@
 import React from 'react'
-import AddStudent from '../components/AddStudent/AddStudent'
+import StudentInfo from '../components/AddStudent/StudentInfo'
 
 const AddStudentPage = () => {
   return (
-  <AddStudent />
+  <StudentInfo />
   )
 }
 

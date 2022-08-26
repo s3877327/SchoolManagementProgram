@@ -7,6 +7,7 @@ const bodyParser = require ('body-parser')
 
 //import route
 const authRoute = require("./routes/auth");
+const studentRoute = require("./routes/student");
 
 dotenv.config();
 
@@ -26,8 +27,9 @@ app.get('/products/:id', function (req, res, next) {
 })
 
 // Router middleware
-app.use("/api/", authRoute);
+app.use("/api", authRoute);
 // app.use("/api/posts", postRoute);
+app.use("/api/", studentRoute)
 
 
 app.listen(4000, () => console.log("Server is Up and Running"));

@@ -10,17 +10,20 @@ const studentSchema = new Schema(
       required: "Student name is required",
     },
 
-    phoneNumber: {
+    phone: {
       type: Number,
     },
 
-    age: {
-      type: Number,
-    },
-
-    note: {
+    email: {
       type: String,
-      max: 1000,
+    },
+
+    studentClass: {
+      type: String,
+    },
+
+    role:{
+      type: Number,
     },
 
     postedBy: {
@@ -33,7 +36,17 @@ const studentSchema = new Schema(
       contentType: String,
     },
 
-    fatherName
+    gender:{
+      type:String,
+    },
+
+    fatherName:{
+      type: String
+    },
+
+    motherName:{
+      type: String,
+    },
   },
   { timestamps: true }
 );
