@@ -39,11 +39,13 @@ const students = async (req, res) => {
 }
 
 const image = async (req, res) => {
-    let student = await Student.findById(req.params.petId).exec();
+    let student = await Student.findById(req.params.studentId).exec();
     if(student && student.image && student.image.data !==null){
         res.set('Content-Type', student.image.contentType)
         return res.send(student.image.data)
     }
 }
+
+
 
 module.exports = {create, students, image}
