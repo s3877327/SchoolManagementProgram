@@ -53,6 +53,38 @@ const deleteStudent = async (req, res) => {
     res.json(removed);
   };
 
+  const update = async (req, res) => {
+    try {
+      let fields = req.fields;
+      let files = req.files;
+  
+      let data = { ...fields, ...files };
+  
+      if (files.image) {
+        let image = {};
+        image.data = fs.readFileSync(files.image.path);
+        image.contentType = files.image.type;
+  
+        data.image = image;
+      }
+  
+      let updated = await Student.findByIdAndUpdate(req.params.studentId, data, {
+        new: true,
+      }).select('-image.data');
+      res.json(updated)
+    } catch (error) {
+      console.log(error);
+      res.status(400).send("Student Update Failed");
+    }
+  };
 
+  const read = async (req, res) => {
+    let singlestudent = await Student.findById(req.params.studentId)
+      .select("-image.data")
+      // .populate("postedBy", "_id name")
+      .exec();
+    console.log("SINGLE STUDENT", singlestudent);
+    res.json(singlestudent);
+  };
 
-module.exports = {create, students, image, deleteStudent}
+module.exports = {create, students, image, deleteStudent, update, read}

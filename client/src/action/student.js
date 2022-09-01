@@ -20,3 +20,21 @@ export const allStudents = async (token) =>
       Authorization: `Bearer ${token}`,
     },
   });
+
+  export const updateStudent = async (token, data, studentId) =>
+  await axios.put(
+    `${process.env.REACT_APP_API}/update-student/${studentId}`,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  export const read = async (studentId, token) =>
+  await axios.get(`${process.env.REACT_APP_API}/student/${studentId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });

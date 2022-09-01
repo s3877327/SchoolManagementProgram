@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
 import StudentList from "./pages/StudentList";
+import EditStudent from "./components/EditStudent";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route exact path="/add-student" element={<AddStudentPage />} />
+          <Route exact path="/edit-student/:studentId" element={<EditStudent />} />
           <Route exact path="/teacher-page" element={<TeacherPage />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />

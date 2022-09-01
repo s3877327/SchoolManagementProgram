@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function EditStudent() {
+function EditStudentCard() {
   return (
     <div className="card">
       <div className="card-body">
@@ -15,4 +15,4 @@ function EditStudent() {
   )
 }
 
-export default EditStudent
+export default EditStudentCard;
