@@ -46,6 +46,13 @@ const image = async (req, res) => {
     }
 }
 
+const deleteStudent = async (req, res) => {
+    let removed = await Student.findByIdAndDelete(req.params.studentId)
+      .select("-image.data")
+      .exec();
+    res.json(removed);
+  };
 
 
-module.exports = {create, students, image}
+
+module.exports = {create, students, image, deleteStudent}

@@ -13,3 +13,10 @@ export const allStudents = async (token) =>
       Authorization: `Bearer ${token}`,
     },
   });
+
+  export const deleteStudent = async (token, studentId) =>
+  await axios.delete(`${process.env.REACT_APP_API}/delete-student/${studentId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });

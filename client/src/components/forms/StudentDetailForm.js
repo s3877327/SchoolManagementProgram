@@ -1,7 +1,7 @@
 import { Fragment, React, useState } from "react";
-import { DatePicker, Select } from "antd";
+import { Select } from "antd";
 import "antd/dist/antd.css";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 
 const StudentDetailForm = (props) => {
   const { auth } = useSelector((state) => ({ ...state }));
