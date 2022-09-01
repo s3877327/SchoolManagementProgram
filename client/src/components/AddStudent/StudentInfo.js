@@ -78,8 +78,6 @@ const StudentInfo = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  
-  
   return (
     <Fragment>
       <div className="container-fluid bg-secondary p-5 text-center">
@@ -89,8 +87,13 @@ const StudentInfo = () => {
         <div className="row">
           <div className="col">
             <br />
-            <StudentDetailForm values={values} setValues={setValues} handleChange={handleChange}handleImageChange={handleImageChange}
-                handleSubmit={handleSubmit}/>
+            <StudentDetailForm
+              values={values}
+              setValues={setValues}
+              handleChange={handleChange}
+              handleImageChange={handleImageChange}
+              handleSubmit={handleSubmit}
+            />
           </div>
           <div className="col-md-2">
             <img
@@ -98,7 +101,7 @@ const StudentInfo = () => {
               alt="preview_image"
               className="img img-fluid m-2"
             />{" "}
-            <pre>{JSON.stringify(values, null, 4)}</pre>
+            {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
           </div>
         </div>
       </div>

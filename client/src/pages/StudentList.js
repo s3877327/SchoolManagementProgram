@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import StudentCard from "../components/StudentCard";
-import { allStudents } from "../action/student";
+import { allStudents, deleteStudent } from "../action/student";
+import {toast} from 'react-toastify'
 
 function StudentList() {
   const [student, setStudent] = useState([]);
@@ -18,6 +19,14 @@ function StudentList() {
   const loadStudents = async () => {
     let res = await allStudents(auth.token);
     setStudent(res.data);
+  };
+
+  const handleDeleteStudent = async (studentId) => {
+    if (!window.confirm("Do you want to delete this student?")) return;
+    deleteStudent(auth.token, studentId).then((res) => {
+      toast.success("Student Deleted");
+      loadStudents();
+    });
   };
 
   return (
@@ -39,7 +48,7 @@ function StudentList() {
               {student.filter(h=>h.studentName.toLowerCase().includes(query)).map((h)=>(
                 <div className="container-fluid">
                   <br />
-                  <StudentCard key={h._id} h={h}/>
+                  <StudentCard key={h._id} h={h} handleDeleteStudent={handleDeleteStudent} />
                 </div>
               ))}
               
