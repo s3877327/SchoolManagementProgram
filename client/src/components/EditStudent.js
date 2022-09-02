@@ -23,7 +23,7 @@ const EditStudent = () => {
     gender: "",
     fatherName: "",
     motherName: "",
-    image: "",
+    
   });
 
   const [image, setImage] = useState('')
@@ -58,7 +58,7 @@ const EditStudent = () => {
     studentData.append("postedBy", auth.user._id);
     image && studentData.append("image", image);
     try {
-      let res = await updateStudent(token, studentData);
+      let res = await updateStudent(token, studentData, studentId);
       console.log("STUDENT CREATE RES", res);
       toast.success(" Student Updated");
       setTimeout(() => {

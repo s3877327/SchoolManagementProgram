@@ -90,9 +90,10 @@ const StudentEditForm = (props) => {
           className="w-100 m-2"
           size="large"
           placeholder='Gender'
+          value={gender}
         >
-          <Option key={1}>Male</Option>
-          <Option key={2}>Female</Option>
+          <Option value='Male'>Male</Option>
+          <Option value='Female'>Female</Option>
         </Select>
 
         <input
