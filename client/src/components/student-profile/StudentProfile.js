@@ -1,4 +1,6 @@
-import React from "react";
+import { Fragment, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import {read} from '../../action/student'
 import ClassInfo from "./ClassInfo";
 import PersonalInfo from "./PersonalInfo";
 import SchoolInfo from "./SchoolInfo";
@@ -6,8 +8,23 @@ import ScoreTable from "./ScoreTable";
 import TeacherNote from "./TeacherNote";
 
 const StudentProfile=()=> {
+  const [student, setStudent] = useState({});
+  const { auth } = useSelector((state) => ({ ...state }));
+  const { token } = auth;
+  const loadStudent = async ()=>{
+    let res = await read(auth.user.email, token)
+    setStudent(res.data)
+  }
+
+  useEffect(()=>{
+    loadStudent();
+  },[]);
+
   return (
-    <div className="container">
+
+    <div className="container">    {
+      console.log(student)
+    }
       <div className="row text-center">
         <div className="col">
           <SchoolInfo />
@@ -19,7 +36,7 @@ const StudentProfile=()=> {
           <ClassInfo />
         </div>
         <div className="col">
-          <PersonalInfo h={h} />
+          <PersonalInfo h={student} />
         </div>
       </div>
       <div className="row">

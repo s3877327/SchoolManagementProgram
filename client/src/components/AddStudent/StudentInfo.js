@@ -5,14 +5,17 @@ import { Select } from "antd";
 import "antd/dist/antd.css";
 import { createStudent } from "../../action/student";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import StudentDetailForm from "../forms/StudentDetailForm";
+import RegisterForm from '../../components/forms/RegisterForm'
+import { register } from "../../action/auth";
 
 const StudentInfo = () => {
   const { auth } = useSelector((state) => ({ ...state }));
   const { token } = auth;
   const navigate = useNavigate();
   const { Option } = Select;
+  const dispatch = useDispatch();
 
   const [values, setValues] = useState({
     studentName: "",
@@ -24,6 +27,7 @@ const StudentInfo = () => {
     fatherName: "",
     motherName: "",
     image: "",
+    password: "",
   });
 
   const [preview, setPreview] = useState(
@@ -40,6 +44,7 @@ const StudentInfo = () => {
     fatherName,
     motherName,
     image,
+    password
   } = values;
 
   const handleSubmit = async (e) => {
@@ -55,8 +60,17 @@ const StudentInfo = () => {
     studentData.append("motherName", motherName);
     studentData.append("postedBy", auth.user._id);
     image && studentData.append("image", image);
+
+    // let studentAccount = new FormData();
+    const name = studentName
+    // studentAccount.append("name", name);
+    // studentAccount.append("email", email);
+    // studentAccount.append("password", password);
+
     try {
       let res = await createStudent(token, studentData);
+      dispatch(register({name, email, password}, navigate))
+
       console.log("STUDENT CREATE RES", res);
       toast.success("New Student added");
       setTimeout(() => {
@@ -104,6 +118,9 @@ const StudentInfo = () => {
             {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
           </div>
         </div>
+        {/* <div className="row">
+          <RegisterForm />
+        </div> */}
       </div>
     </Fragment>
   );
