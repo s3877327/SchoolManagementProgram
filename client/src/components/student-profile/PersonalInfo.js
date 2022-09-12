@@ -1,10 +1,10 @@
 import React from 'react'
 
-function PersonalInfo() {
+const PersonalInfo = ({h})=> {
   return (
     <div>
         <p>Gender: </p>
-        <p>Father's name: </p>
+        <p>Father's name: {h.fathername}</p>
         <p>Mother's name: </p>
     </div>
   )

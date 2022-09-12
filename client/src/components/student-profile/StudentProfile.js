@@ -5,7 +5,7 @@ import SchoolInfo from "./SchoolInfo";
 import ScoreTable from "./ScoreTable";
 import TeacherNote from "./TeacherNote";
 
-function StudentProfile() {
+const StudentProfile=()=> {
   return (
     <div className="container">
       <div className="row text-center">
@@ -19,7 +19,7 @@ function StudentProfile() {
           <ClassInfo />
         </div>
         <div className="col">
-          <PersonalInfo />
+          <PersonalInfo h={h} />
         </div>
       </div>
       <div className="row">
