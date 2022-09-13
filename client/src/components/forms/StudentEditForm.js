@@ -67,6 +67,7 @@ const StudentEditForm = (props) => {
           placeholder="Email"
           className="form-control m-2"
           values={email}
+          disabled
         />
         <input
             type="password"
