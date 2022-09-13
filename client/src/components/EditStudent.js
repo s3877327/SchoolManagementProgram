@@ -59,7 +59,6 @@ const EditStudent = () => {
     studentData.append("fatherName", fatherName);
     studentData.append("motherName", motherName);
     studentData.append("postedBy", auth.user._id);
-    studentData.append("postedBy", auth.user._id);
     image && studentData.append("image", image);
 
     const name = studentName

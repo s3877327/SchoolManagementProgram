@@ -66,4 +66,30 @@ const login = async (req, res) => {
   //res.send('Logged In')
 };
 
- module.exports = {register, login}
+const update = async (req, res) => {
+  try {
+    let fields = req.fields;
+
+    let data = { ...fields };
+
+    let updated = await User.findByIdAndUpdate(req.params.teacherId, data, {
+      new: true,
+    });
+
+    return res.json(updated)
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("Teacher Update Failed");
+  }
+};
+
+const read = async (req, res) => {
+  let singleteacher = await User.findById(req.params.teacherId)
+    .select("-image.data")
+    // .populate("postedBy", "_id name")
+    .exec();
+  console.log("SINGLE TEACHER", singleteacher);
+  res.json(singleteacher);
+};
+
+ module.exports = {register, login, update, read}

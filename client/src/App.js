@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
 import StudentList from "./pages/StudentList";
 import EditStudent from "./components/EditStudent";
+import TeacherAccount from "./components/teacher-manage/TeacherAccount";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/student-profile" element={<StudentProfilePage />} />
           <Route exact path="/student-list" element={<StudentList />} />
+          {/* <Route exact path="/teacher-account" element={<TeacherAccount />} /> */}
+          <Route exact path="/update-teacher/:teacherId" element={<TeacherAccount />} />
         </Routes>
       </BrowserRouter>
     </>

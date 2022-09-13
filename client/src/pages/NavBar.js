@@ -42,7 +42,7 @@ const Navbar = () => {
             <ul className="nav">
               {auth.user.isTeacher && (
                 <li className="nav-item">
-                  <Link className="nav-link active" to="/myaccount">
+                  <Link className="nav-link active" to={`/update-teacher/${auth.user._id}`}>
                     My Account
                   </Link>
                 </li>
