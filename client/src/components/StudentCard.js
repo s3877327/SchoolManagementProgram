@@ -33,9 +33,9 @@ const StudentCard = ({ h, handleDeleteStudent = (f) => f }) => {
               <p className="card-text">Email: {h.email}</p>
               <p className="card-text">Father: {h.fatherName}</p>
               <p className="card-text">Mother: {h.motherName}</p>
-              <p className="card-text">Math: {h.math}</p>
+              {/* <p className="card-text">Math: {h.math}</p>
               <p className="card-text">English: {h.english}</p>
-              <p className="card-text">Physic: {h.physic}</p>
+              <p className="card-text">Physic: {h.physic}</p> */}
               <div className="d-flex justify-content-between h4 ">
                 {/* <button
                   onClick={() => navigate(`/view-student/${h._id}`)}
