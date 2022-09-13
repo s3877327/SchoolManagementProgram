@@ -16,7 +16,7 @@ export const register =  (userdata, navigate) => async dispatch => {
         });
         //redirect to login page in 3s
         setTimeout(() => {
-          navigate("/login");
+          navigate("/");
         }, 4000);
       } catch (error) {
         console.log(error);
@@ -51,3 +51,13 @@ export const login = (userdata, navigate) => async dispatch => {
       }
 }
 
+export const updateUser = async (token, data, userId) =>
+  await axios.put(
+    `${process.env.REACT_APP_API}/user/update-user/${userId}`,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );

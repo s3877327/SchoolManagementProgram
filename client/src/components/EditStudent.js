@@ -5,14 +5,17 @@ import { Select } from "antd";
 import "antd/dist/antd.css";
 import { updateStudent, read } from "../action/student";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import StudentEditForm from "./forms/StudentEditForm";
+import { register } from "../action/auth";
+
 
 const EditStudent = () => {
   const { auth } = useSelector((state) => ({ ...state }));
   const { token } = auth;
   const navigate = useNavigate();
   const { Option } = Select;
+  const dispatch = useDispatch();
 
   const [values, setValues] = useState({
     studentName: "",
@@ -23,7 +26,7 @@ const EditStudent = () => {
     gender: "",
     fatherName: "",
     motherName: "",
-    
+    password:''
   });
 
   const [image, setImage] = useState('')
@@ -41,7 +44,7 @@ const EditStudent = () => {
     gender,
     fatherName,
     motherName,
-    
+    password
   } = values;
 
   const handleSubmit = async (e) => {
@@ -56,10 +59,15 @@ const EditStudent = () => {
     studentData.append("fatherName", fatherName);
     studentData.append("motherName", motherName);
     studentData.append("postedBy", auth.user._id);
+    studentData.append("postedBy", auth.user._id);
     image && studentData.append("image", image);
+
+    const name = studentName
+
     try {
       let res = await updateStudent(token, studentData, studentId);
-      console.log("STUDENT CREATE RES", res);
+
+      console.log("STUDENT UPDATED RES", res);
       toast.success(" Student Updated");
       setTimeout(() => {
         //window.location.reload();

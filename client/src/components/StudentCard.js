@@ -29,13 +29,17 @@ const StudentCard = ({ h, handleDeleteStudent = (f) => f }) => {
               <p className="card-text">Gender: {h.gender}</p>
               <p className="card-text">Class: {h.studentClass}</p>
               <p className="card-text">Role: {h.role}</p>
+              <p className="card-text">Phone: {h.phone}</p>
+              <p className="card-text">Email: {h.email}</p>
+              <p className="card-text">Father: {h.fatherName}</p>
+              <p className="card-text">Mother: {h.motherName}</p>
               <div className="d-flex justify-content-between h4 ">
-                <button
+                {/* <button
                   onClick={() => navigate(`/view-student/${h._id}`)}
                   className="btn btn-primary"
                 >
                   Show more
-                </button>
+                </button> */}
                 <Link to={`/edit-student/${h._id}`}>
                   <EditOutlined className="text-warning" />
                 </Link>

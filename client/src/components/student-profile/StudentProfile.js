@@ -23,17 +23,17 @@ const StudentProfile=()=> {
   return (
 
     <div className="container">    {
-      console.log(student)
+      // console.log(student)
     }
       <div className="row text-center">
         <div className="col">
-          <SchoolInfo />
+          <SchoolInfo h={student} />
         </div>
       </div>
       <div className="h4 pb-2 mb-4 text-danger border-top border-dark"></div>
       <div className="row justify-content-left">
         <div className="col">
-          <ClassInfo />
+          <ClassInfo h={student}/>
         </div>
         <div className="col">
           <PersonalInfo h={student} />
@@ -46,7 +46,7 @@ const StudentProfile=()=> {
       </div>
       <div className="row">
         <div className="col">
-          <TeacherNote />
+          <TeacherNote h={student}/>
         </div>
       </div>
     </div>

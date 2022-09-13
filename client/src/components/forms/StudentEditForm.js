@@ -22,6 +22,7 @@ const StudentEditForm = (props) => {
     fatherName,
     motherName,
     image,
+    password
   } = values;
   return (
     <Fragment>
@@ -48,6 +49,7 @@ const StudentEditForm = (props) => {
           className="form-control m-2"
           values={studentName}
         />
+        
         <input
           type="number"
           name="phone"
@@ -66,6 +68,15 @@ const StudentEditForm = (props) => {
           className="form-control m-2"
           values={email}
         />
+        <input
+            type="password"
+            name="password"
+            onChange={handleChange}
+            placeholder="Password"
+            className="form-control m-2"
+            values={password}
+            disabled
+          />
         <input
           type="studentClass"
           name="studentClass"

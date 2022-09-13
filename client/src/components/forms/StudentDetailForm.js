@@ -93,8 +93,8 @@ const StudentDetailForm = (props) => {
             size="large"
             placeholder="Gender"
           >
-            <Option key={1}>Male</Option>
-            <Option key={2}>Female</Option>
+            <Option value="Male">Male</Option>
+            <Option value="Female">Female</Option>
           </Select>
 
           <input

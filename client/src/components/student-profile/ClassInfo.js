@@ -1,11 +1,11 @@
 import React from 'react'
 
-function ClassInfo() {
+const ClassInfo = ({h}) => {
   return (
     <div>
-        <p>Name: </p>
-        <p>Class: </p>
-        <p>Role: </p>
+        <p>Name: {h.studentName} </p>
+        <p>Class: {h.studentClass}</p>
+        <p>Role: {h.role}</p>
     </div>
   )
 }
