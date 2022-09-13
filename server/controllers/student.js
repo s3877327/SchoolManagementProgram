@@ -78,7 +78,7 @@ const update = async (req, res) => {
 };
 
 const read = async (req, res) => {
-  let singlestudent = await Student.findOne({email:req.params.studentId})
+  let singlestudent = await Student.findOne({ email: req.params.studentId })
     .select("-image.data")
     // .populate("postedBy", "_id name")
     .exec();
@@ -86,4 +86,13 @@ const read = async (req, res) => {
   res.json(singlestudent);
 };
 
-module.exports = { create, students, image, deleteStudent, update, read };
+const readOne = async (req, res) => {
+  let onestudent = await Student.findById(req.params.studentId)
+    .select("-image.data")
+    // .populate("postedBy", "_id name")
+    .exec();
+  console.log("SINGLE STUDENT", onestudent);
+  res.json(onestudent);
+};
+
+module.exports = { create, students, image, deleteStudent, update, read, readOne };

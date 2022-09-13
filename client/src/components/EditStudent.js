@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { useParams, useMatch } from "react-router-dom";
 import { Select } from "antd";
 import "antd/dist/antd.css";
-import { updateStudent, read } from "../action/student";
+import { updateStudent, read, readOne } from "../action/student";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import StudentEditForm from "./forms/StudentEditForm";
@@ -82,7 +82,7 @@ const EditStudent = () => {
   const {studentId} = useParams()
   
   const loadStudent = async () => {
-    let res = await read(studentId, token);
+    let res = await readOne(studentId, token);
     setValues({ ...values, ...res.data });
     setPreview(`${process.env.REACT_APP_API}/students/image/${studentId}`);
   };
