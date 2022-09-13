@@ -48,3 +48,14 @@ export const readOne = async (studentId, token) =>
       Authorization: `Bearer ${token}`,
     },
   });
+
+  export const updateScore = async (token, data, studentId) =>
+  await axios.put(
+    `${process.env.REACT_APP_API}/update-score/${studentId}`,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )

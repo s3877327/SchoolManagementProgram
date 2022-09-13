@@ -41,14 +41,14 @@ const StudentProfile=()=> {
       </div>
       <div className="row">
         <div className="col">
-          <ScoreTable />
+          <ScoreTable h={student} />
         </div>
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className="col">
           <TeacherNote h={student}/>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

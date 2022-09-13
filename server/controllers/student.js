@@ -77,6 +77,31 @@ const update = async (req, res) => {
   }
 };
 
+const updateScore = async (req, res) => {
+  try {
+    let fields = req.fields;
+    let files = req.files;
+
+    let data = { ...fields, ...files };
+
+    if (files.image) {
+      let image = {};
+      image.data = fs.readFileSync(files.image.path);
+      image.contentType = files.image.type;
+
+      data.image = image;
+    }
+
+    let updated = await Student.findByIdAndUpdate(req.params.studentId, data, {
+      new: true,
+    }).select("-image.data");
+    res.json(updated);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("Student Update Failed");
+  }
+};
+
 const read = async (req, res) => {
   let singlestudent = await Student.findOne({ email: req.params.studentId })
     .select("-image.data")
@@ -95,4 +120,4 @@ const readOne = async (req, res) => {
   res.json(onestudent);
 };
 
-module.exports = { create, students, image, deleteStudent, update, read, readOne };
+module.exports = { create, students, image, deleteStudent, update, read, readOne, updateScore };

@@ -28,6 +28,9 @@ const StudentInfo = () => {
     motherName: "",
     image: "",
     password: "",
+    math:'0',
+    english:'0',
+    physic:'0'
   });
 
   const [preview, setPreview] = useState(

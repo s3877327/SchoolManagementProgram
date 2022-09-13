@@ -47,6 +47,12 @@ const studentSchema = new Schema(
     motherName:{
       type: String,
     },
+
+    math: {type: Number},
+
+    english: {type: Number},
+
+    physic: {type: Number},
   },
   { timestamps: true }
 );

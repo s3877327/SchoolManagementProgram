@@ -1,24 +1,24 @@
 import React from "react";
 
-function ScoreTable() {
+function ScoreTable({h}) {
   return (
     <table className="table table-striped text-center table-bordered">
       <thead>
         <tr className="table-primary">
           <th scope="col">Subjects</th>
-          <th scope="col">Test 1</th>
-          <th scope="col">Test 2</th>
-          <th scope="col">Final Test</th>
+          <th scope="col">Math</th>
+          <th scope="col">English</th>
+          <th scope="col">Physic</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">English</th>
-          <td>0</td>
-          <td>2</td>
-          <td>3</td>
+          <th scope="row">Score</th>
+          <td>{h.math}</td>
+          <td>{h.english}</td>
+          <td>{h.physic}</td>
         </tr>
-        <tr>
+        {/* <tr>
           <th scope="row">Math</th>
           <td>10</td>
           <td>9</td>
@@ -35,7 +35,7 @@ function ScoreTable() {
           <td>4</td>
           <td>5</td>
           <td>6</td>
-        </tr>
+        </tr> */}
       </tbody>
     </table>
 
